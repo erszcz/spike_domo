@@ -7,6 +7,7 @@ defmodule SpikeDomo.MixProject do
       version: "0.1.0",
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
+      compilers: [:domo_compiler] ++ Mix.compilers(),
       deps: deps()
     ]
   end
@@ -21,8 +22,8 @@ defmodule SpikeDomo.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      # {:dep_from_hexpm, "~> 0.3.0"},
-      # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
+      {:typed_struct, "~> 0.3.0"},
+      {:domo, "~> 1.5"}
     ]
   end
 end
